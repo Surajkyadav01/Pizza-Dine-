@@ -16,10 +16,10 @@ The website is designed for a restaurant named **Pizza Dine** to showcase their 
 - JavaScript
 
 ## 📸 Project Preview
-(Add your screenshot images here)
+(https://image2url.com/r2/default/images/1775547856076-102d6ee0-a0bf-45c2-baa8-abbd503531a3.png)
 
 ## 🌐 Live Demo
-(Add your live website link here)
+(https://surajkyadav01.github.io/Pizza-Dine-/)
 
 ## 📌 About Me
 I am a BCA student and a passionate web developer.  
