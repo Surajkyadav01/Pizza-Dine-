@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Dine</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(45deg, #ff3d00, #ff9100);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* ✅ MENU BUTTON (ONLY ADD THIS) */
+.menu-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.menu-btn {
+  background: black;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-list {
+  display: none;
+  background: white;
+  position: absolute;
+  right: 0;
+  color: black;
+  min-width: 150px;
+}
+
+.menu-list a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.menu-list a:hover {
+  background: #eee;
+}
+
+.menu-box:hover .menu-list {
+  display: block;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background: url('https://image2url.com/r2/default/images/1775458538532-8ebfcb3b-c44e-4bf7-b445-fd4b432a613a.jpg') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.btn {
+  background: #ff9100;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* GALLERY */
+#gallery {
+  padding: 40px;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 300px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* MENU */
+#menu {
+  padding: 40px;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  margin: 15px;
+  padding: 20px;
+  width: 200px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,145,0,0.3);
+}
+
+/* CONTACT */
+.contact {
+  background: #222;
+  padding: 40px;
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  background: black;
+  padding: 10px;
+  text-align: center;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: green;
+  padding: 15px;
+  border-radius: 50%;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Pizza Dine</h1>
+  <p>Delicious Pizza & Fast Delivery 🍕</p>
+
+  <!-- ✅ MENU BUTTON ADDED -->
+  <div class="menu-box">
+    <button class="menu-btn">☰ Menu</button>
+    <div class="menu-list">
+      <a href="#">About Restaurant</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+
+</header>
+
+<section class="hero">
+  <div class="overlay">
+    <h2>Welcome to Pizza Dine</h2>
+    <p>Fresh • Hot • Tasty</p>
+    <a href="#menu" class="btn">View Menu</a>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Our Restaurant</h2>
+  <div class="gallery">
+    <img src="https://image2url.com/r2/default/images/1775458364393-dc41b159-38ba-4b77-aba1-0aa9aa7c7daf.webp">
+    <img src="https://image2url.com/r2/default/images/1775458538532-8ebfcb3b-c44e-4bf7-b445-fd4b432a613a.jpg">
+    <img src="https://image2url.com/r2/default/images/1775459497115-b3dfee67-ca8f-4ed3-8c4a-087c208bf8b1.webp">
+  </div>
+</section>
+
+<section id="menu">
+  <h2>Our Menu</h2>
+  <div class="menu">
+    <div class="card">
+      <h3>Cheese Pizza</h3>
+      <p>₹199</p>
+    </div>
+
+    <div class="card">
+      <h3>Veg Loaded Pizza</h3>
+      <p>₹249</p>
+    </div>
+
+    <div class="card">
+      <h3>Paneer Pizza</h3>
+      <p>₹299</p>
+    </div>
+
+    <div class="card">
+      <h3>Cold Drink</h3>
+      <p>₹49</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Address:- Galla Mandi, Suriyawan, Uttar Pradesh 221404</p>
+  <p>📞 Phone: 070841 04648</p>
+  <a href="tel:7084104648" class="btn">Call Now</a>
+</section>
+
+<a class="whatsapp" href="https://wa.me/917084104648?text=Hello Pizza Dine, I want to order food" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="40">
+</a>
+
+<footer>
+  © Pizza Dine 2026 | All Rights Reserved
+</footer>
+
+<script>
+console.log("Pizza Dine Website Loaded 🍕");
+</script>
+
+</body>
+</html>
