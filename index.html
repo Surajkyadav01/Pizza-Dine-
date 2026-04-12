@@ -6,11 +6,11 @@
 <title>Pizza Dine</title>
 
 <style>
+/* ======= TERA ORIGINAL CSS SAME ======= */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: white;
-
   background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
@@ -22,7 +22,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* HEADER */
 header {
   background: linear-gradient(45deg, #ff3d00, #ff9100);
   text-align: center;
@@ -30,7 +29,7 @@ header {
   position: relative;
 }
 
-/* ✅ MENU BUTTON (ONLY ADD THIS) */
+/* ✅ FIXED MENU */
 .menu-box {
   position: absolute;
   top: 20px;
@@ -65,9 +64,8 @@ header {
   background: #eee;
 }
 
-.menu-box:hover .menu-list {
-  display: block;
-}
+/* ❌ REMOVE hover wala old behavior */
+/* .menu-box:hover .menu-list { display: block; } */
 
 /* HERO */
 .hero {
@@ -111,11 +109,32 @@ header {
 .gallery img {
   width: 300px;
   border-radius: 10px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
+}
+
+/* ✅ POPUP STYLE ADDED */
+#popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#popup img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
 }
 
 /* MENU */
@@ -145,21 +164,18 @@ header {
   background: rgba(255,145,0,0.3);
 }
 
-/* CONTACT */
 .contact {
   background: #222;
   padding: 40px;
   text-align: center;
 }
 
-/* FOOTER */
 footer {
   background: black;
   padding: 10px;
   text-align: center;
 }
 
-/* WHATSAPP */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -178,16 +194,14 @@ footer {
   <h1>Pizza Dine</h1>
   <p>Delicious Pizza & Fast Delivery 🍕</p>
 
-  <!-- ✅ MENU BUTTON ADDED -->
   <div class="menu-box">
-    <button class="menu-btn">☰ Menu</button>
-    <div class="menu-list">
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    <div class="menu-list" id="menuList">
       <a href="#">About Restaurant</a>
       <a href="#">Privacy Policy</a>
       <a href="#">FAQ</a>
     </div>
   </div>
-
 </header>
 
 <section class="hero">
@@ -206,43 +220,26 @@ footer {
     <img src="https://image2url.com/r2/bucket1/images/1775993415575-762d1b96-90b1-45fd-af79-2a6d7fde945f.jpg">
   </div>
 </section>
+
 <section id="menu-gallery">
   <h2>Our Menu</h2>
   <div class="gallery">
-    
     <img src="https://image2url.com/r2/bucket1/images/1775994516497-be699dff-fd0e-42f6-b092-e2f33c4d7a5e.jpg" onclick="openImage(this.src)">
-    
     <img src="https://image2url.com/r2/bucket3/images/1775994595766-fcc0e275-7f26-4370-ab6e-ecbff0883fc2.jpg" onclick="openImage(this.src)">
-    
   </div>
 </section>
 
-<!-- Popup Image -->
 <div id="popup" onclick="closeImage()">
   <img id="popup-img">
 </div>
+
 <section id="menu">
   <h2>Our Menu</h2>
   <div class="menu">
-    <div class="card">
-      <h3>Cheese Pizza</h3>
-      <p>₹199</p>
-    </div>
-
-    <div class="card">
-      <h3>Veg Loaded Pizza</h3>
-      <p>₹249</p>
-    </div>
-
-    <div class="card">
-      <h3>Paneer Pizza</h3>
-      <p>₹299</p>
-    </div>
-
-    <div class="card">
-      <h3>Cold Drink</h3>
-      <p>₹49</p>
-    </div>
+    <div class="card"><h3>Cheese Pizza</h3><p>₹199</p></div>
+    <div class="card"><h3>Veg Loaded Pizza</h3><p>₹249</p></div>
+    <div class="card"><h3>Paneer Pizza</h3><p>₹299</p></div>
+    <div class="card"><h3>Cold Drink</h3><p>₹49</p></div>
   </div>
 </section>
 
@@ -263,6 +260,26 @@ footer {
 
 <script>
 console.log("Pizza Dine Website Loaded 🍕");
+
+/* ✅ POPUP FUNCTION */
+function openImage(src) {
+  document.getElementById("popup").style.display = "flex";
+  document.getElementById("popup-img").src = src;
+}
+
+function closeImage() {
+  document.getElementById("popup").style.display = "none";
+}
+
+/* ✅ MENU TOGGLE FIX */
+function toggleMenu() {
+  let menu = document.getElementById("menuList");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
 </script>
 
 </body>
