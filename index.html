@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pizza Dine</title>
 
 <style>
-/* ======= TERA ORIGINAL CSS SAME ======= */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -29,7 +28,7 @@ header {
   position: relative;
 }
 
-/* ✅ FIXED MENU */
+/* ✅ MENU */
 .menu-box {
   position: absolute;
   top: 20px;
@@ -37,9 +36,9 @@ header {
 }
 
 .menu-btn {
-  background: black;
-  color: white;
-  padding: 8px 12px;
+  background: transparent;
+  color: black;
+  font-size: 24px;
   border: none;
   cursor: pointer;
 }
@@ -63,9 +62,6 @@ header {
 .menu-list a:hover {
   background: #eee;
 }
-
-/* ❌ REMOVE hover wala old behavior */
-/* .menu-box:hover .menu-list { display: block; } */
 
 /* HERO */
 .hero {
@@ -117,7 +113,7 @@ header {
   transform: scale(1.05);
 }
 
-/* ✅ POPUP STYLE ADDED */
+/* POPUP */
 #popup {
   display: none;
   position: fixed;
@@ -135,6 +131,12 @@ header {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
+}
+
+/* ✅ HEADINGS CENTER FIX */
+h2 {
+  text-align: center;
+  width: 100%;
 }
 
 /* MENU */
@@ -195,7 +197,7 @@ footer {
   <p>Delicious Pizza & Fast Delivery 🍕</p>
 
   <div class="menu-box">
-    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <div class="menu-list" id="menuList">
       <a href="#">About Restaurant</a>
       <a href="#">Privacy Policy</a>
@@ -222,7 +224,7 @@ footer {
 </section>
 
 <section id="menu-gallery">
-  <h2>Our Menu</h2>
+  <h2>Our Menu Card</h2>
   <div class="gallery">
     <img src="https://image2url.com/r2/bucket1/images/1775994516497-be699dff-fd0e-42f6-b092-e2f33c4d7a5e.jpg" onclick="openImage(this.src)">
     <img src="https://image2url.com/r2/bucket3/images/1775994595766-fcc0e275-7f26-4370-ab6e-ecbff0883fc2.jpg" onclick="openImage(this.src)">
@@ -259,9 +261,6 @@ footer {
 </footer>
 
 <script>
-console.log("Pizza Dine Website Loaded 🍕");
-
-/* ✅ POPUP FUNCTION */
 function openImage(src) {
   document.getElementById("popup").style.display = "flex";
   document.getElementById("popup-img").src = src;
@@ -271,7 +270,6 @@ function closeImage() {
   document.getElementById("popup").style.display = "none";
 }
 
-/* ✅ MENU TOGGLE FIX */
 function toggleMenu() {
   let menu = document.getElementById("menuList");
   if (menu.style.display === "block") {
